@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <!-- Basic Page Needs
+        ================================================== -->
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <title>Hello World: Announcing Dapper Linux</title>
+        <meta name="description" content="Announcing Dapper Linux">
+        <meta name="keywords" content="Blog Post">
+        <meta name="author" content="Dapper Linux Limited">
+        <!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Template CSS Files
+        ================================================== -->
+        <!-- Twitter Bootstrs CSS -->
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <!-- Ionicons Fonts Css -->
+        <link rel="stylesheet" href="../css/ionicons.min.css">
+        <!-- template main css file -->
+        <link rel="stylesheet" href="../css/main.css">
+        <!-- responsive css -->
+        <link rel="stylesheet" href="../css/responsive.css">
+        
+        <!-- Template Javascript Files
+        ================================================== -->
+        <!-- jquery js -->
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+	    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+	    crossorigin="anonymous"></script>
+        <!-- bootstrap js -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
+        crossorigin="anonymous"></script>
+        
+    </head>
+    <body>
+        <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+        <header id="top-bar" class="navbar-fixed-top animated-header">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- responsive nav button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <!-- /responsive nav button -->
+                    
+                    <!-- logo -->
+                    <div class="navbar-brand">
+                        <a href="../index.html" >
+                            <img src="../images/logo.png" alt="">
+                        </a>
+                    </div>
+                    <!-- /logo -->
+                </div>
+                <!-- main menu -->
+                <nav class="collapse navbar-collapse navbar-right" role="navigation">
+                    <div class="main-menu">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../features.html">Features</a></li>
+                            <li><a href="../download.html">Download</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Support <span class="caret"></span></a>
+                                <div class="dropdown-menu">
+                                    <ul>
+                                        <li><a href="../documentation.html">Documentation</a></li>
+                                        <li><a href="../donate.html">Donate</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="../blog.html">Blog</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- /main nav -->
+            </div>
+        </header>
+        <!--
+        ==================================================
+        Global Page Section Start
+        ================================================== -->
+        <section class="global-page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="block">
+                            <h2>Hello World: Announcing Dapper Linux</h2>
+                            <div class="portfolio-meta">
+                                <span>18 April 2017</span>|
+                                <span>Category: Thoughts</span>|
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </section><!--/#Page header-->
+            <section class="single-post">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="post-img">
+                                <img class="img-responsive" alt="" src="images/post-1.jpg">
+                            </div>
+                            <div class="post-content">
+                                <p>
+                                    My name is Matthew Ruffell, and I'm a computer scientist living in Christchurch, New Zealand with a particular interest in Linux and computer security. I'm still at University, beginning my PhD mid 2016. This blog post represents a huge milestone for me - releasing my own Linux distribution, and starting my first business. Today, I want to tell you all about a little project I have been working on for the past eight months, Dapper Linux.
+                                </p>
+                                <p>
+                                    I have been using Linux full time as my primary operating system for about five years now, with four of those years on Fedora. Recently, when I was installing the new Fedora 24 release, I thought to myself, "I should probably learn how to harden my system at some point". I knew there were options out there that I could pursue, but they all looked very laboursome and difficult. At the same time, since I clean install every six months for the new releases, I was also getting fed up reinstalling all of my applications and resetting my configs. It was shortly after that I decided to make my own distro, something that was relatively secure out of the box that also contained all the applications and configs I use.
+                                </p>
+                                <blockquote>
+                                    I thought to myself, "I should probably learn how to harden my system at some point"
+                                </blockquote>
+                                <p>
+                                    So in early September 2016, I read up on the Fedora wiki about creating whats known as a "Remix", and started up a Github repo of my kickstart files, and slowly started creating Dapper Linux. It was excellent fun at first, I learnt how Anaconda uses kickstart files to produce installation media, and how I could include any package I wished by simply editing the kickstart files. I eventually realised that I had to ship my own branding and repository configuration to abide by Fedora's trademark regulations, so I had to learn how to become a packager, and quickly became proficient at writing RPM spec files and building and maintaining a COPR repository of Dapper Linux packages.
+                                </p>
+                                <p>
+                                    When it came to hardening, I had discovered an interesting project called Grsecurity, by Open Source Security Inc. The benefits sound almost too good to be true, with mitigating and eliminating entire classes of exploits, and protecting against zero days. Reading the documentation and presentations on their website, it quickly became apparent that this is the real deal, and is exactly what I was after. However, to land Grsecurity in Dapper Linux, it meant that I would have to build and ship custom patched kernels. At this stage I had never built a kernel before, so it became quite the learning process on how to acquire the latest source, applying patches, configuring options and building the actual kernel.
+                                </p>
+                                <p>
+                                    It wasn't long until I stumbled across another group called Subgraph who were trying to achieve the same goal, and they had some incredible software called Oz and fw-daemon. Oz is a groundbreaking sandboxing system, and fw-daemon is a neat little firewall tool that alerts you to network packets coming and going. When I saw them, I knew I had to land them in Dapper Linux. This involved working out how to build go packages, and tested my packaging skills.
+                                </p>
+                                <p>
+                                    And with that, Dapper Linux became feature complete. This has been one huge learning experience for me, and has surely taken my Linux skills to a whole other level. 
+                                </p>
+                                <blockquote>
+                                    This has been one huge learning experience for me, and has surely taken my Linux skills to a whole other level.
+                                </blockquote>
+                                <p>
+                                    Dapper Linux is a hardened Linux distribution, which takes advanced security features meant to be used by advanced Linux users and makes them available to normal everyday users in a "just works" out of the box fashion. <br><br>
+                                    The features you will find in Dapper Linux are:
+                                </p>
+                                    <ol>
+                                        <li>A Grsecurity / PaX / RAP patched Linux Kernel</li>
+                                        <li>Graphical apps completely sandboxed with Oz</li>
+                                        <li>Dual web browsers, with one set up for hardened browsing</li>
+                                        <li>An active firewall which alerts you to connections</li>
+                                        <li>A large set of applications configured to support the secure kernel and sandboxing</li>
+                                        <li>Full hard disk encryption
+                                        <li>DNSSEC by default and working out of the box
+                                        <li>A tasteful dark theme</li>
+                                        <li>A simple, straightforward installer</li>
+                                    </ol>
+                                    
+                                <p>
+                                    Like what you see? How about giving it a <a href="../downloads.html">try</a>. Or perhaps you want to read more about its <a href="../features.html">features</a> first.    
+                                </p>
+                                <p>
+                                    Whatever the matter, I hope you like what you see, and become a user. Send me some <a href="../contact.html">feedback</a> if you like Dapper Linux!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            
+            <!--
+            ==================================================
+            Call To Action Section Start
+            ================================================== -->
+            <section id="call-to-action">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="block">
+                                <h2 class="title">Ready To Try Out Dapper Linux?</h1>
+                                <p>Let's get you secured. We will have you up and running in no time.</p>
+                                <a href="../download.html" class="btn btn-default btn-contact">Download Now</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+            <!--
+            ==================================================
+            Footer Section Start
+            ================================================== -->
+            <footer id="footer">
+                <div class="container">
+                    <div class="col-md-8">
+                        <p class="copyright">Copyright <span>2017</span> Dapper Linux Limited<br><a href="https://riot.im/app/#/room/#dapperlinux:matrix.org">#dapperlinux</a> on matrix.org</p>
+                    </div>
+                    <div class="col-md-4">
+                        <!-- Social Media -->
+                        <ul class="social">
+                            <li>
+                                <a href="https://www.facebook.com/dapperlinux">
+                                    <i> Facebook</i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://www.twitter.com/dapperlinux">
+                                    <i> Twitter</i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.github.com/dapperlinux">
+                                    <i> Github</i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.reddit.com/r/dapperlinux">
+                                    <i> Reddit</i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </footer> <!-- /#footer -->
+                
+            </body>
+        </html>
+    </html>
