@@ -5,7 +5,7 @@
         ================================================== -->
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <link rel="icon" type="image/png" href="images/favicon.png">
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
         <title>Documentation</title>
         <meta name="description" content="Documentation relating to installing and using Dapper Linux">
         <meta name="keywords" content="Documentation">
@@ -67,6 +67,7 @@
                             <li><a href="about.html">About</a></li>
                             <li><a href="features.html">Features</a></li>
                             <li><a href="download.html">Download</a></li>
+                            <li><a href="patchset.html">Patchset</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Support <span class="caret"></span></a>
                                 <div class="dropdown-menu">
@@ -120,9 +121,9 @@
             <div class="container">
                 <div class="row">
                     <div>
-                        <h2>Dapper Linux 25 Alpha Release Notes</h2>
+                        <h2>Dapper Linux 26 Alpha Release Notes</h2>
                         <h4>Release Statement</h4>
-                            <p>Dapper Linux Limited is pleased to announce the release of weekly builds for the Dapper Linux 25 operating system. Dapper Linux 25 is the latest and greatest release, and is designed to make advanced security features available to everyone by automating and configuring these features for an easy to use out of the box experience.
+                            <p>Dapper Linux Limited is pleased to announce the release of weekly builds for the Dapper Linux 26 operating system. Dapper Linux 26 is the latest and greatest release, and is designed to make advanced security features available to everyone by automating and configuring these features for an easy to use out of the box experience.
                             </p>
                         <h4>Known Issues</h4>
                         <p>
@@ -133,15 +134,14 @@
                         <a href="https://github.com/dapperlinux/dapper-linux-issues/issues/2">Issue #2 - Bridged networking does not work in Oz</a><br>
                         Currently, the IP tables are improperly configured, which results in Oz sandboxes not being able to have internet access. This is a pretty serious problem, and will be resolved soon.
                         </p>
-                        <p>
-                        <a href="https://github.com/dapperlinux/dapper-linux-issues/issues/3">Issue #3 - Full hard disk encryption has not landed by default</a><br>
-                        Full hard disk encryption has not landed in Dapper Linux by default, and users must enable LUKS manually by checking the "encrypt" box on the partitioning screen of the installer.
-                        </p>
-                        <p>
-                        <a href="https://github.com/dapperlinux/dapper-linux-issues/issues/4">Issue #4 - Nautilus is vulnerable to trusted .desktop execution attacks</a><br>
-                        Recently, an attack against nautilus in regards to how it displays and processes .desktop files has been circulating around the internet. This requires the user to manually intervene, and is more of a social engineering attack more than anything. Will be fixed by a prompt in the release of Dapper Linux 26, or by sandboxing nautilus.
-                        </p>
                         <h4>Changelog</h4>
+                        <p><h5>Installer changed to Calamares</h5>The default installer for Dapper Linux has changed from Anaconda to Calamares. This was done to improve user experience, as Calamares is a lot easier to navigate, and it also automates and implements the feature of encrypting the entire disk, including /boot.
+                        </p>
+                        <p><h5>Intrusion detection systems initial offering</h5>
+                        Intrusion detection systems such as chkrootkit, rkhunter and tripwire have been added to the ISO image, and more are on their way in this release cycle.
+                        </p>
+                        <p><h5>Updating the distribution stack</h5>Dapper Linux 26 has been brought up to a Fedora 26 base, and now includes updates software such as Gnome Shell 3.24, and other changes in Fedora 26. The kernel has been updated to Linux 4.9.48, using Dapper Secure Kernel Patchset Stable patches.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -228,7 +228,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="block">
-                                <h2 class="title">Ready To Try Out Dapper Linux?</h1>
+                                <h2 class="title">Ready To Try Out Dapper Linux?</h2>
                                 <p>Let's get you secured. We will have you up and running in no time.</p>
                                 <a href="download.html" class="btn btn-default btn-contact">Download Now</a>
                             </div>

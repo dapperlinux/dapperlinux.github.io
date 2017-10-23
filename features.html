@@ -5,7 +5,7 @@
         ================================================== -->
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <link rel="icon" type="image/png" href="images/favicon.png">
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
         <title>Features</title>
         <meta name="description" content="Features in Dapper Linux">
         <meta name="keywords" content="Features">
@@ -67,6 +67,7 @@
                             <li><a href="about.html">About</a></li>
                             <li><a href="features.html">Features</a></li>
                             <li><a href="download.html">Download</a></li>
+                            <li><a href="patchset.html">Patchset</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Support <span class="caret"></span></a>
                                 <div class="dropdown-menu">
@@ -183,7 +184,7 @@
                         </div>
                         <div class="col-md-5">
                         <h2>Full Hard Disk Encryption</h2>
-                            <p class="text-left">Dapper Linux is able to utilise full hard disk encryption to keep your data safe. Encryption is implemented with a LUKS container, with LVM for partition management. This encryption is transparent, so you unlock your computer during startup, and not have to worry about entering passwords again.<br><br>Please note this feature is not currently landed by default in Dapper Linux 25, and must be enabled manually. Full hard disk encryption by default will land in Dapper Linux 26.</p>
+                            <p class="text-left">Dapper Linux is able to utilise full hard disk encryption to keep your data safe. Encryption is implemented with a LUKS container, and swap is encrypted too. This encryption is transparent, so you unlock your computer during startup, and not have to worry about entering passwords again.<br><br>Simply check the encryption box when installing Dapper Linux, and enter in a passphrase, and the installer does all the heavy lifting for you. /boot is encrypted too, which prevents evil maid attacks. LUKS Keyfiles are used so you only need to enter your passphrase once each boot.</p>
                         </div>  
                 </div>
                 <div class="row">
@@ -203,24 +204,36 @@
                 </div>
                 <div class="row">
                         <div class="col-md-7">
-                            <a href="images/screenshots/theme.png"><img class="img-responsive" src="images/screenshots/theme.png" alt="" ></a>
+                            <a href="images/screenshots/intrusion-detection.png"><img class="img-responsive" src="images/screenshots/intrusion-detection.png" alt=""></a>
                         </div>
                         <div class="col-md-5">
-                        <h2>Defined Dark Themes with Minimilistic Styling</h2>
-                            <p class="text-left">Dapper Linux comes with an attractive dark theme, Dapper Dark. Dapper Dark has been in development for a few years, and takes the best parts from the themes Phosphene and Arc-Dark to create a modern desktop environment. All programs have been set to display their minimum UI, making for a clean minimalistic experience.</p>
-                        </div>
+                        <h2>Intrusion Detection Systems</h2>
+                            <p class="text-left">Dapper Linux comes with intrusion detection systems built in, and ready to detect any nasties that attempt to get in. Host based intrustion detection systems include chkrootkit and rkhunter to find system rootkits, tripwire for seeing changes to files on disk, and in the future snort will be added for full network coverage. Watch this space!</p>
+                        </div>  
                 </div>
                 <div class="row">
                 <hr>
                 </div>
                 <div class="row">
                         <div class="col-md-5">
-                        <h2>Simple Installation</h2>
-                            <p class="text-left">Installing Dapper Linux is a simple and familiar process. Simply open up the installer, select your language, create your user account and start installing! Anaconda, the Dapper Linux installer, does all the hard work for you.</p>
-                        </div>  
+                        <h2>Defined Dark Themes with Minimilistic Styling</h2>
+                            <p class="text-left">Dapper Linux comes with an attractive dark theme, Dapper Dark. Dapper Dark has been in development for a few years, and takes the best parts from the themes Phosphene and Arc-Dark to create a modern desktop environment. All programs have been set to display their minimum UI, making for a clean minimalistic experience.</p>
+                        </div>
+                        <div class="col-md-7">
+                            <a href="images/screenshots/theme.png"><img class="img-responsive" src="images/screenshots/theme.png" alt="" ></a>
+                        </div>
+                </div>
+                <div class="row">
+                <hr>
+                </div>
+                <div class="row">
                         <div class="col-md-7">
                             <a href="images/screenshots/installer.png"><img class="img-responsive" src="images/screenshots/installer.png" alt=""></a>
                         </div>
+                        <div class="col-md-5">
+                        <h2>Simple Installation</h2>
+                            <p class="text-left">Installing Dapper Linux is a simple and familiar process. Simply open up the installer, select your language, create your user account and start installing! Calamares, the Dapper Linux installer, does all the hard work for you.</p>
+                        </div>  
                 </div>
             </div>
         </section>
@@ -235,7 +248,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="block">
-                                <h2 class="title">Ready To Try Out Dapper Linux?</h1>
+                                <h2 class="title">Ready To Try Out Dapper Linux?</h2>
                                 <p>Let's get you secured. We will have you up and running in no time.</p>
                                 <a href="download.html" class="btn btn-default btn-contact">Download Now</a>
                             </div>

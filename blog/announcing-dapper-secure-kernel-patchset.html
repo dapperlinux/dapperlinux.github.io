@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <!-- Basic Page Needs
+        ================================================== -->
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+        <title>Announcing Dapper Secure Kernel Patchset</title>
+        <meta name="description" content="Announcing Dapper Secure Kernel Patchset, a kernel hardening patchset">
+        <meta name="keywords" content="grsecurity, announce, forward port, secure">
+        <meta name="author" content="Dapper Linux Limited">
+        <!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Template CSS Files
+        ================================================== -->
+        <!-- Twitter Bootstrs CSS -->
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <!-- template main css file -->
+        <link rel="stylesheet" href="../css/main.css">
+        <!-- responsive css -->
+        <link rel="stylesheet" href="../css/responsive.css">
+        
+        <!-- Template Javascript Files
+        ================================================== -->
+        <!-- jquery js -->
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+	    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+	    crossorigin="anonymous"></script>
+        <!-- bootstrap js -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
+        crossorigin="anonymous"></script>
+        
+    </head>
+    <body>
+        <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+        <header id="top-bar" class="navbar-fixed-top animated-header">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- responsive nav button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <!-- /responsive nav button -->
+                    
+                    <!-- logo -->
+                    <div class="navbar-brand">
+                        <a href="../index.html" >
+                            <img src="../images/logo.png" alt="">
+                        </a>
+                    </div>
+                    <!-- /logo -->
+                </div>
+                <!-- main menu -->
+                <nav class="collapse navbar-collapse navbar-right" role="navigation">
+                    <div class="main-menu">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../features.html">Features</a></li>
+                            <li><a href="../download.html">Download</a></li>
+                            <li><a href="../patchset.html">Patchset</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Support <span class="caret"></span></a>
+                                <div class="dropdown-menu">
+                                    <ul>
+                                        <li><a href="../documentation.html">Documentation</a></li>
+                                        <li><a href="../donate.html">Donate</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="../blog.html">Blog</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- /main nav -->
+            </div>
+        </header>
+        <!--
+        ==================================================
+        Global Page Section Start
+        ================================================== -->
+        <section class="global-page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="block">
+                            <h2>Announcing Dapper Secure Kernel Patchset</h2>
+                            <div class="portfolio-meta">
+                                <span>20 October 2017</span>|
+                                <span> Category: thoughts</span>|
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </section><!--/#Page header-->
+            <section class="single-post">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="post-img">
+                                <img class="img-responsive" alt="" src="images/post-3.png">
+                            </div>
+                            <div class="post-content">
+                                <p>
+                                    Its about time to write a blog post to announce a little side project that I have been working on over for the last few months. As much of the Linux security community is aware, in April 2017, Grsecurity <a href="https://grsecurity.net/passing_the_baton.php">announced</a> that they were discontinuing their publicly available "test" patchset, which bolstered and dramatically improves the security of the Linux kernel. This came after a shock <a href=https://grsecurity.net/announce.php">decision</a> in 2015 to remove their stable patchset from public view. Let's not get too caught up in the politics and hurt feelings behind these actions and reactions and focus on something a little more positive, starting with this snippet from the <a href="https://grsecurity.net/passing_the_baton_faq.php">FAQ</a> on "Passing the Baton".
+                                </p>
+                                <blockquote>
+                                    Why are you doing this?<br><br>
+We have been providing grsecurity freely for 16 years. Given renewed interest in security by the Linux community, we are opening our playground for newcomers to experiment with new ideas. We believe our future will be shaped by the next generation and this will provide them with the experience needed to improve Linux kernel security.<br>-Grsecurity <a href="https://grsecurity.net/passing_the_baton_faq.php">(source)</a>
+                                </blockquote>
+                                <p>
+                                    Hmm. That's pretty thoughtful. Up to April 2017, Grsecurity has been the gold standard in Linux security, and the team of people behind the project have made some  incredible contributions to the field of computer security. Especially smart people like "The PaX Team" have invented multiple mitigations and technologies which a few years down the track, are now widely implemented in most major operating systems (e.g. ASLR) and even in silicon on actual processor hardware. Spender has probably spent countless hours reading Linux kernel code and closing information leaks and strengthening internal memory structures.
+                                </p>
+                                <p>
+                                	This makes the prospect of "opening our playground for newcomers to experiment with new ideas" a rather large deal, since there are especially large shoes to fill. The primary problem facing the world is that, well, there aren't a lot of people who understand or are capable of maintaining such a patchset, let alone come up with the next generation of security mitigations and implement them. Saying this, opportunities like this do not come along often, and this is one large learning opportunity to attempt to learn how the patchset works and how security can be improved further.
+                                </p>
+                                <p>
+                                    Longtime Grsecurity contributor, Mathias Krause / Minipli has pledged to maintain the 4.9.x patchset indefinitely, which is very generous, as it doesn't take a lot of searching around to see how clever he is and how much he understands the patchset. Unfortunately, he has <a href="https://twitter.com/_minipli/status/860931541706428416">commented</a> that he will not forward port the patchset any further out of respect. The 4.9.x port can be found in <a href="https://github.com/minipli/linux-unofficial_grsec/tree/linux-4.9.x-unofficial_grsec">this</a> Github repo.
+                                </p>
+                                <p>
+                                	This still does not solve the problem, as Linux kernel development moves very quickly, with a new release approximately every two months. In this case, the KSPP (Kernel Self Protection Project) has attempted to step in to fill the gap, by upstreaming components of last publicly available grsecurity patchset. Now, the KSPP has stirred an unhealthy amount of politics around the whole situation, but are still doing excellent work to attempt to upstream the some 3200 patches that compose the 9.8mb patchset. However, the KSPP are taking a bottom up approach, by rewriting the patches in a state where they can be accepted into upstream, which means the current effort is in early days, and still does not come close to the coverage the last grsecurity patchset offers. You can find the Github repo for linux-hardened <a href="https://github.com/copperhead/linux-hardened">here</a>.
+                                </p>
+                                <blockquote>
+                                	Okay, this is all well and good, but why not take the top down approach, by forward porting the entire last public grsecurity release to newer kernels? Well, it seems no one was working on that, so I have decided to do just that.
+                                </blockquote>
+                                <p>
+                                	Okay, this is all well and good, but why not take the top down approach, by forward porting the entire last public grsecurity release to newer kernels? Well, it seems no one was working on that, so I have decided to do just that. Of course, at the time, I had very little kernel development experience. My first time I ever compiled a kernel from source was Linux 4.7 sometime in September 2016. From there, I started to create grsecurity RPMs for Dapper Linux in December 2016, and never really had to look at the patchset. So in April 2017, I was mostly at square one. But I wanted to give it an honest shot, since being a Linux kernel developer is something to aspire to, and I created a Github repo to track my efforts, in a new project called <a href="https://github.com/dapperlinux/dapper-secure-kernel-patchset">Dapper Secure Kernel Patchset</a>. Dapper Secure Kernel Patchset is my effort to forward port the final grsecurity patchset to the latest Linux kernel release. Linux 4.11 had just been released when I made this decision, and I remember there being about 450 files which contain merge conflicts (out of 3200). What ensued for the next few weeks was a colossal effort to forward port those conflicts. Some were straightforward. Some not so. All in all, I spent about 70 or 80 hours solving the merge conflicts. 
+                                </p>
+                                <p>
+                                	But when I tried to compile my new patchset, I quickly learned I had a few hundred compile errors. Defeated, I decided to try something a little bit easier, so I created <a href="https://github.com/dapperlinux/dapper-secure-kernel-patchset-stable">Dapper Secure Kernel Patchset Stable</a>, a forward port of the final grsecurity patchset for the 4.9.x kernel series. This patchset is fully functional, and is the patchset in used in Dapper Linux 25 and 26. There is not a lot of overhead maintaining this patchset, so it will be maintained as long as I am developing Dapper Linux, but the goal will be to transition to newer kernels with Dapper Secure Kernel Patchset.
+                                </p>
+                                <p>
+                                	About a month later, I decided to fix all the compile errors in my 4.11.x Dapper Secure Kernel Patchset. It took a few weeks, and I learned a lot about the C programming language and all the weird mannerisms the Linux kernel has, but it finally compiled. All for me to boot, and be greeted by... absolutely nothing. Well, this was a huge blow to my self esteem. I hadn't learned to debug the Linux kernel, so the project sat still for a while longer. But recently, with the release of 4.13, I have regained interest in the project, and have fixed all the merge conflicts to 4.13.8, and the patch is availible on the <a href="https://github.com/dapperlinux/dapper-secure-kernel-patchset">Github</a> repo. This patch does not compile, and this is what I am currently working on now. Once that has been completed, I will learn to debug the kernel and attempt to get it booting.
+                                </p>
+                                <p>
+                                	Grsecurity is right about one thing. Newcomers are coming along and attempting to learn and grow, and master the field of cyber security. While I still have a ways to go, I am interested in keeping this patchset around as long as it is feasible, and I am learning some incredible patch hunk rewriting skills and becoming very good at fixing compile errors in code I have never laid eyes on before. You can find downloads for the patchsets on this website, <a href="../patchset.html">here</a>.
+                                </p>
+                                <p>
+                                	If you are interested in this project, which I assume you are since you read this far, consider <a href="../contact.html">dropping me a line</a>, or offering to help, either by creating pull requests to fix bugs, or offering to teach me to debug kernels. Any help or interest is appreciated.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            
+            <!--
+            ==================================================
+            Call To Action Section Start
+            ================================================== -->
+            <section id="call-to-action">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="block">
+                                <h2 class="title">Ready To Try Out Dapper Linux?</h2>
+                                <p>Let's get you secured. We will have you up and running in no time.</p>
+                                <a href="../download.html" class="btn btn-default btn-contact">Download Now</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+            <!--
+            ==================================================
+            Footer Section Start
+            ================================================== -->
+            <footer id="footer">
+                <div class="container">
+                    <div class="col-md-8">
+                        <p class="copyright">Copyright <span>2017</span> Dapper Linux Limited<br><a href="https://riot.im/app/#/room/#dapperlinux:matrix.org">#dapperlinux</a> on matrix.org</p>
+                    </div>
+                    <div class="col-md-4">
+                        <!-- Social Media -->
+                        <ul class="social">
+                            <li>
+                                <a href="https://www.facebook.com/dapperlinux">
+                                    <i> Facebook</i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://www.twitter.com/dapperlinux">
+                                    <i> Twitter</i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.github.com/dapperlinux">
+                                    <i> Github</i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.reddit.com/r/dapperlinux">
+                                    <i> Reddit</i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </footer> <!-- /#footer -->
+                
+            </body>
+        </html>
+    </html>
