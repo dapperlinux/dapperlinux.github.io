@@ -120,26 +120,31 @@
             <div class="container">
                 <div class="row">
                     <div>
-                        <h2>Dapper Linux 26 Alpha Release Notes</h2>
+                        <h2>Dapper Linux 27 Alpha Release Notes</h2>
                         <h4>Release Statement</h4>
-                            <p>Dapper Linux Limited is pleased to announce the release of weekly builds for the Dapper Linux 26 operating system. Dapper Linux 26 is the latest and greatest release, and is designed to make advanced security features available to everyone by automating and configuring these features for an easy to use out of the box experience.
+                            <p>Dapper Linux Limited is pleased to announce the release of weekly builds for the Dapper Linux 27 operating system. Dapper Linux 27 is the latest and greatest release, and is designed to make advanced security features available to everyone by automating and configuring these features for an easy to use out of the box experience.
                             </p>
                         <h4>Known Issues</h4>
                         <p>
-                        <a href="https://github.com/dapperlinux/dapper-linux-issues/issues/1">Issue #1 - Application Firewall does not prompt on live image</a><br>
-                        Application firewall fails to prompt on the live image, but still has control of network traffic, giving the impression that networking has failed, when it is really getting caught up in application firewall. 
-                        </p>
-                        <p>
-                        <a href="https://github.com/dapperlinux/dapper-linux-issues/issues/2">Issue #2 - Bridged networking does not work in Oz</a><br>
-                        Currently, the IP tables are improperly configured, which results in Oz sandboxes not being able to have internet access. This is a pretty serious problem, and will be resolved soon.
+                        	<p>
+                        	<b>Incorrect Theming</b>
+                        	</p>
                         </p>
                         <h4>Changelog</h4>
-                        <p><h5>Installer changed to Calamares</h5>The default installer for Dapper Linux has changed from Anaconda to Calamares. This was done to improve user experience, as Calamares is a lot easier to navigate, and it also automates and implements the feature of encrypting the entire disk, including /boot.
-                        </p>
-                        <p><h5>Intrusion detection systems initial offering</h5>
-                        Intrusion detection systems such as chkrootkit, rkhunter and tripwire have been added to the ISO image, and more are on their way in this release cycle.
-                        </p>
-                        <p><h5>Updating the distribution stack</h5>Dapper Linux 26 has been brought up to a Fedora 26 base, and now includes updates software such as Gnome Shell 3.24, and other changes in Fedora 26. The kernel has been updated to Linux 4.9.48, using Dapper Secure Kernel Patchset Stable patches.
+                        <p>
+                        Dapper Linux 27 is a major change to version 26. Here is a quick roundup to what has changed:
+                        	<p>
+                        	<b>Move to Flatpak.</b> <br>Dapper Linux 27 now uses Flatpak as the sandboxing framework, and all applications are flatpaks. So go ahead and add your flatpak remotes and enjoy the future of application distribution and security!
+                        	</p>
+                        	<p>
+                        	<b>Removal of OZ and Application Firewall / fw-daemon.</b> <br>With the transition to Flatpak, Oz has been phased out, with many thanks going to the Subgraph crew for developing an excellent piece of software. Dapper Linux is attempting to move in a different direction, and is giving Flatpak a shot. Application Firewall is being removed due to some dbus bugs that have been a problem for a long, long time.
+                        	</p>
+                        	<p>
+                        	<b>Dapper Hardened Browser Redevloped.</b> <br>Dapper Hardened Browser has been completly redone from scratch, since it has been moved from RPM packaging to flatpaks. Dapper Hardened Browser is now based on Firefox Developer Edition, which means seperate profiles by default, and no more messy background "hacks" to get seperate profiles to work. Enjoy the speed of version 58.0, and with a new lineup of webextensions, Dapper Hardned Browser is the best it has ever been.
+                        	</p>
+                        	<p>
+                        	<b>Dapper Secure Kernel Stable</b> <br>Dapper Secure Kernel Stable 4.9.62+ (currently 4.9.68 at writing), using the latest Dapper Secure Kernel Patchset Stable patches, which you can find <a href="patchset.html">here</a>.
+                        	</p>
                         </p>
                     </div>
                 </div>
