@@ -119,11 +119,11 @@
             <div class="container">
                 <div class="row">
                         <div class="col-md-5">
-                        <h2>Hardened Linux Kernel with grsecurity, PaX and RAP</h2>
-                            <p class="text-left">Dapper Linux ships with a hardened grsecurity patched Linux Kernel. Grsecurity/PaX patches are a true innovation to the Linux security world, and strives to prevent zero day attacks and other advanced threats by eliminating entire bug classes and exploit vectors, rather than fixing individual instances of a problem. The PaX patches pioneered Kernel level ASLR and other important security mitigations, and Dapper Linux ships with applications correctly set up for use with this kernel. Grsecurity, PaX and RAP provides the core security foundation of Dapper Linux.</p>
+                        <h2>Hardened Linux Kernel with Dapper Secure Kernel Patchset</h2>
+                            <p class="text-left">Dapper Linux ships with a hardened Linux Kernel, patched with Dapper Secure Kernel Patchset, a continuation of Grsecurity/PaX/RAP. Grsecurity/PaX patches are a true innovation to the Linux security world, and strives to prevent zero day attacks and other advanced threats by eliminating entire bug classes and exploit vectors, rather than fixing individual instances of a problem. The PaX patches pioneered Kernel level ASLR and other important security mitigations, and Dapper Linux ships with applications correctly set up for use with this kernel. Grsecurity, PaX and RAP provides the core security foundation of Dapper Linux.</p>
                         </div>
                         <div class="col-md-7">
-                            <a href="/images/screenshots/grsecurity.png"><img class="img-responsive" src="/images/screenshots/grsecurity.png" alt=""></a>
+                            <a href="/images/screenshots/dappersec.png"><img class="img-responsive" src="/images/screenshots/dappersec.png" alt=""></a>
                         </div>
                 </div>
                 <div class="row">
@@ -131,11 +131,11 @@
                 </div>
                 <div class="row">
                         <div class="col-md-7">
-                            <a href="/images/screenshots/oz-sandbox.png"><img class="img-responsive" src="/images/screenshots/oz-sandbox.png" alt=""></a>
+                            <a href="/images/screenshots/sandbox.png"><img class="img-responsive" src="/images/screenshots/sandbox.png" alt=""></a>
                         </div>
                         <div class="col-md-5">
                         <h2>Sandboxed Applications with Flatpak</h2>
-                            <p class="text-left">Oz is a sandboxing framework designed to secure everyday applications. Your applications run in a secure chroot environment, with only the bare essentials the application requires to run. Sandboxes are further restricted with the system calls they are able to make, enforced by seccomp. Access to the file system and networking is disabled, unless specifically enabled inside the applications profile. Oz provides a simple UI to add and remove files from a sandbox, and brings great security with strong ease of use. Oz greatly restricts post exploitation activities, and is the future of secure desktop applications. </p>
+                            <p class="text-left">Flatpak is an application sandboxing and distribution framework. Applications run securely sandboxed by bwrap, an innovation by project atomic. Portals allow access to the underlying system and access to things like the filesystem and networking can be easily restricted or allowed. Flatpak allows applications to be paired with a runtime, say a particular version of Gnome. Applications can then be started with that particular version, regardless of what updates the operating system has applied.</p>
                         </div>  
                 </div>
                 <div class="row">
@@ -155,11 +155,11 @@
                 </div>
                 <div class="row">
                         <div class="col-md-7">
-                            <a href="/images/screenshots/applicationfirewall.png"><img class="img-responsive" src="/images/screenshots/applicationfirewall.png" alt=""></a>
+                            <a href="/images/screenshots/intrusion-detection.png"><img class="img-responsive" src="/images/screenshots/intrusion-detection.png" alt=""></a>
                         </div>
                         <div class="col-md-5">
-                        <h2>Advanced Application Firewall</h2>
-                            <p class="text-left">Dapper Linux includes an advanced application firewall, which will prompt you to allow any and all network accesses, so you can be in full control of your network activity. Full information is provided, such as originating process, IP address and port, and system user. Rules can be defined, so once you make a decision, you will no longer be prompted and packets are routed as you wish.</p>
+                        <h2>Intrusion Detection Systems</h2>
+                            <p class="text-left">Dapper Linux comes with intrusion detection systems built in, and ready to detect any nasties that attempt to get in. Host based intrustion detection systems include chkrootkit and rkhunter to find system rootkits, tripwire for seeing changes to files on disk, and in the future snort will be added for full network coverage. Watch this space!</p>
                         </div>  
                 </div>
                 <div class="row">
@@ -203,36 +203,24 @@
                 </div>
                 <div class="row">
                         <div class="col-md-7">
-                            <a href="/images/screenshots/intrusion-detection.png"><img class="img-responsive" src="/images/screenshots/intrusion-detection.png" alt=""></a>
+                            <a href="/images/screenshots/theme.png"><img class="img-responsive" src="/images/screenshots/theme.png" alt="" ></a>
                         </div>
-                        <div class="col-md-5">
-                        <h2>Intrusion Detection Systems</h2>
-                            <p class="text-left">Dapper Linux comes with intrusion detection systems built in, and ready to detect any nasties that attempt to get in. Host based intrustion detection systems include chkrootkit and rkhunter to find system rootkits, tripwire for seeing changes to files on disk, and in the future snort will be added for full network coverage. Watch this space!</p>
-                        </div>  
-                </div>
-                <div class="row">
-                <hr>
-                </div>
-                <div class="row">
                         <div class="col-md-5">
                         <h2>Defined Dark Themes with Minimilistic Styling</h2>
                             <p class="text-left">Dapper Linux comes with an attractive dark theme, Dapper Dark. Dapper Dark has been in development for a few years, and takes the best parts from the themes Phosphene and Arc-Dark to create a modern desktop environment. All programs have been set to display their minimum UI, making for a clean minimalistic experience.</p>
                         </div>
-                        <div class="col-md-7">
-                            <a href="/images/screenshots/theme.png"><img class="img-responsive" src="/images/screenshots/theme.png" alt="" ></a>
-                        </div>
                 </div>
                 <div class="row">
                 <hr>
                 </div>
                 <div class="row">
-                        <div class="col-md-7">
-                            <a href="/images/screenshots/installer.png"><img class="img-responsive" src="/images/screenshots/installer.png" alt=""></a>
-                        </div>
                         <div class="col-md-5">
                         <h2>Simple Installation</h2>
                             <p class="text-left">Installing Dapper Linux is a simple and familiar process. Simply open up the installer, select your language, create your user account and start installing! Calamares, the Dapper Linux installer, does all the hard work for you.</p>
                         </div>  
+                        <div class="col-md-7">
+                            <a href="/images/screenshots/installer.png"><img class="img-responsive" src="/images/screenshots/installer.png" alt=""></a>
+                        </div>
                 </div>
             </div>
         </section>
@@ -265,7 +253,7 @@
         <footer id="footer">
                 <div class="container">
                     <div class="col-md-8">
-                        <p class="copyright">Copyright <span>2017</span> Dapper Linux Limited<br><a href="https://riot.im/app/#/room/#dapperlinux:matrix.org">#dapperlinux</a> on matrix.org</p>
+                        <p class="copyright">Copyright <span>2018</span> Dapper Linux Limited<br><a href="https://riot.im/app/#/room/#dapperlinux:matrix.org">#dapperlinux</a> on matrix.org</p>
                     </div>
                     <div class="col-md-4">
                         <!-- Social Media -->

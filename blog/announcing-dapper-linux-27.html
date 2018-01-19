@@ -6,9 +6,9 @@
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-        <title>Announcing Dapper Linux 26</title>
-        <meta name="description" content="Releasing Dapper Linux 26 and new features">
-        <meta name="keywords" content="Release, 26, dapper, linux, fedora">
+        <title>Blog Post</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
         <meta name="author" content="Dapper Linux Limited">
         <!-- Mobile Specific Metas
         ================================================== -->
@@ -94,9 +94,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="block">
-                            <h2>Announcing Dapper Linux 26</h2>
+                            <h2>Announcing Dapper Linux 27</h2>
                             <div class="portfolio-meta">
-                                <span>10 September 2017</span>|
+                                <span>19 January 2018</span>|
                                 <span> Category: Thoughts</span>|
                             </div>
                         </div>
@@ -109,35 +109,33 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="post-img">
-                                <img class="img-responsive" alt="Announcing Dapper Linux 26" src="/blog/images/post-2.png">
+                                <img class="img-responsive" alt="" src="/blog/images/post-4.png">
                             </div>
                             <div class="post-content">
                                 <p>
-                                    It's time to announce the availability of Dapper Linux 26, the latest release of the flagship secure operating system by Dapper Linux Limited. Dapper Linux 26 is filled with all sorts of great features designed to bring you an easy to use operating system with excellent security. 
+                                    It's time for another major announcement, and that is the release of Dapper Linux 27! Dapper Linux 27 is the next generation of flagship secure operating systems by Dapper Linux Limited. Dapper Linux is designed from the ground up to keep you safe and secure.
                                 </p>
                                 <blockquote>
-                                    I'm still super excited and happy to be creating the Linux distribution of my dreams. A world where security meets usability, and Dapper Linux is leading the way. - Matthew Ruffell, Founder.
+                                    Making Dapper Linux is my passion, and I am dedicated to building you a secure operating system that fits into your lifestyle and needs. - Matthew Ruffell, Founder.
                                 </blockquote>
                                 <p>
-                                    New in Dapper Linux 26:
-                                    <br><br>
-                                    The default installer has been changed from Anaconda to Calamares, in an effort to make the install process less confusing, more streamlined and more secure. Calamares also implements full hard disk encryption better than Anaconda did, which is the greatest benefit. Before, Anaconda would only encrypt the main partition and leave the bootloader plaintext. Now, Calamares creates a full LUKS container, and inside places the primary partition and the swap partition. The boot partition is omitted and is merged in the primary partition. The LUKS image is unlocked with a keyfile, which is decrypted by grub2, which means you only need to decrypt the disk once, compared to twice beforehand. Its a win win for system usability and security, so Calamares is here to stay!
-                                    <br><br>
-                                    Thunderbird has been swapped for Evolution, since Evolution better supports GPG out of the box, and actually has plugins which work with exchange servers, making it easier to users to cope those kinds of mailservers.
-                                    <br><br>
-                                    The default terminal has been changed from gnome-terminal to Tilix, a tiling terminal that follows the Gnome human user guidelines. It is well built and absolutely improves efficiency. Give it a go!
-                                    <br><br>
-                                    <img class='image-responsive center-block' alt='Tilix' src="/blog/images/post-2-tilix.png" width='901' height='506' align='middle'>
-                                    <br><br>
-                                    The sandboxing framework, Oz, has been updated to the latest version and has many bugfixes and speed improvements, which helps with stability and usability. Expect sandboxes to launch faster than ever before! The application firewall, fw-daemon, has also been updated to the latest release, and features Oz integration, UDP protocol support and more! The team over at Subgraph have made excellent progress with their software, keep up the great work!
-                                    <br><br>
-                                    On the kernel side of things, Linux has been updated to >= 4.9.49 with the latest security fixes. Marking applications with PaX information has been moved from the older way of replacing the GNU stack headers with PaX headers to using extended file attributes. This means it is easier to change the PaX attributes of a file, especially if it is in use, and also means the files are no longer modified, so their checksums still match, which helps verify programs integrity and rebuild delta RPM packages.
-                                    <br><br>
-                                    A whole assortment of software has been updated, such as Dapper Hardened Browser now being brought up to version 55, and includes updates to all addons used as we prepare to migrate fully to web extensions for version 57, coming in November. The theme, dapper-dark has also been partially rewritten and now integrates better with the new gnome-shell. Saying that, moving to the new Fedora 26 base grants updated applications, such as Gnome 3.24, LibreOffice 5.3.6, 
-                                    <br><br>
-                                    There are also numerous changes under the hood, such as optimising kickstarts and the like, and the new inclusion of intrusion detection systems such as rkhunter and chkrootkit, so have a dig around! 
-                                    <br><br>
-                                    As always, get in <a href="/contact.html">contact</a> if you like Dapper Linux or have any suggestions. It's great to hear feedback from users!
+                                    New in Dapper Linux 27:
+                                </p>
+                                <p>
+                                    Flatpak is the new preferred sandboxing framework and application distribution system for Dapper Linux 27. Oz has been removed, and is no longer supported, so if you use custom applications with Oz, you should start migrating to Flatpak. Flatpak brings many exciting new features and an expanded application base. If you are interested in how Flatpak works, check out their <a href="https://flatpak.org">website</a> and applications you can install from <a href="https://flathub.org">flathub.</a><br>
+                                    Flatpak uses bwrap as a sandboxing mechanism, and is setuid instead of enabling user namespaces in the kernel. User namespaces are far too much of a concern to enable since the threat surface is rapidly increased by any user being able to do traditionally privileged actions like creating network namespaces, so instead setuid bwrap is more secure in the eyes of Dapper Linux.
+                                </p>
+                                <p>
+                                Dapper Hardened Browser got an overhaul, and now supports Firefox Quantum, or version 57 features. Dapper Hardened Browser itself is now built as a developer edition to unlock the developer features, and more importantly has sane profile separation. Before Dapper Linux used in "interesting" way to ensure your browser started with different profiles, and this has been fully resolved. Note that some addons had to be dropped, such as Request Policy, NoScript and User Agent Switcher, and have been replaced with uMatrix.
+                                </p>
+                                <p>
+                                The kernel has been updated to 4.9.70+ and currently sits in 4.9.74 in the first build of 2018. It should be mentioned that the fix for meltdown and spectre has been pushed to Linux 4.9.75, and some complications have arisen forward porting Dapper Secure Kernel Patchset Stable to accommodate with the new patches. A separate blog post will follow with what is happening in that area.
+                                </p>
+                                <p>
+                                Stability has greatly improved in Dapper Linux 27. If you are a user, please do install Dapper Linux 27, as it fixes a large amount of problems with the introduction of Flatpak. Fedora 27 is the base, so upgraded Gnome 3.26 and other features are at their latest versions.
+                                </p>
+                                <p>
+                                So, if you like the sound of Dapper Linux, go ahead and <a href="/download.html">download</a> it, and don't forget to <a href="/contact.html">contact</a> us if you have any suggestions or improvements.
                                 </p>
                             </div>
                         </div>
