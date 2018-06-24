@@ -120,32 +120,33 @@
             <div class="container">
                 <div class="row">
                     <div>
-                        <h2>Dapper Linux 27 Alpha Release Notes</h2>
+                        <h2>Dapper Linux 28 Release Notes</h2>
+                        <br>
                         <h4>Release Statement</h4>
-                            <p>Dapper Linux Limited is pleased to announce the release of weekly builds for the Dapper Linux 27 operating system. Dapper Linux 27 is the latest and greatest release, and is designed to make advanced security features available to everyone by automating and configuring these features for an easy to use out of the box experience.
+                            <p>Dapper Linux Limited is pleased to announce the release of weekly builds for the Dapper Linux 28 operating system. Dapper Linux 28 is the latest and greatest release, and is designed to make advanced security features available to everyone by automating and configuring these features for an easy to use out of the box experience.
                             </p>
+                            <br>
                         <h4>Known Issues</h4>
                         <p>
                         	<p>
-                        	<b>Incorrect Theming</b>
+                        	<b>Kernel package can not be built on Dapper Linux 28</b> <br>
+				The dapper-secure-kernel package cannot be built on Dapper Linux 28 as GCC 8 is the default compiler. Dapper Secure Kernel Patchset Stable is not quite compatible with GCC 8, and still needs to be built with GCC 7. If you want to reproduce the kernel package, use Dapper Linux 27, or a Fedora 27 chroot.
                         	</p>
                         </p>
+                        <br>
                         <h4>Changelog</h4>
-                        <p>
-                        Dapper Linux 27 is a major change to version 26. Here is a quick roundup to what has changed:
-                        	<p>
-                        	<b>Move to Flatpak.</b> <br>Dapper Linux 27 now uses Flatpak as the sandboxing framework, and all applications are flatpaks. So go ahead and add your flatpak remotes and enjoy the future of application distribution and security!
-                        	</p>
-                        	<p>
-                        	<b>Removal of OZ and Application Firewall / fw-daemon.</b> <br>With the transition to Flatpak, Oz has been phased out, with many thanks going to the Subgraph crew for developing an excellent piece of software. Dapper Linux is attempting to move in a different direction, and is giving Flatpak a shot. Application Firewall is being removed due to some dbus bugs that have been a problem for a long, long time.
-                        	</p>
-                        	<p>
-                        	<b>Dapper Hardened Browser Redevloped.</b> <br>Dapper Hardened Browser has been completly redone from scratch, since it has been moved from RPM packaging to flatpaks. Dapper Hardened Browser is now based on Firefox Developer Edition, which means seperate profiles by default, and no more messy background "hacks" to get seperate profiles to work. Enjoy the speed of version 58.0, and with a new lineup of webextensions, Dapper Hardned Browser is the best it has ever been.
-                        	</p>
-                        	<p>
-                        	<b>Dapper Secure Kernel Stable</b> <br>Dapper Secure Kernel Stable 4.9.62+ (currently 4.9.68 at writing), using the latest Dapper Secure Kernel Patchset Stable patches, which you can find <a href="patchset.html">here</a>.
-                        	</p>
-                        </p>
+			<p>
+			Dapper Linux 28 is mostly a stability and bugfix release from version 27. All users of 27 are recommended to upgrade. Here is what has changed:
+				<p>
+				<b>Dark theming has been fixed.</b> <br>Dark theming in applications was mostly broken in the move to flatpak, and this has now been remedied. Dapper-dark theme is now applied to Flatpak applications and traditional applications.
+				</p>
+				<p>
+				<b>Dapper Secure Kernel Stable Updates</b> <br>Since the release of 4.9.74 Dapper Secure Kernel Patchset Stable was stuck due to PTI and Retpoline additions being incompatible with Dapper Secure Kernel Patchset. Development has resumed, and the kernel patchset is no longer as blocked as it used to be, and Dapper Linux 28 ships with Linux 4.9.109.dappersec.
+				</p>
+				<p>
+				<b>Dapper Hardened Browser Updates</b> <br>Dapper Hardened Browser has been tweaked and is now more locked down than before, and is now at version 61b.
+				</p>
+			</p>
                     </div>
                 </div>
             </div>
@@ -156,6 +157,7 @@
                 <div class="row">
                     <div>
                         <h2>Threat Model For Dapper Linux</h2>
+                        <br>
                         <p>
                             Dapper Linux has been designed for environments where you would use your computer normally, for normal everyday tasks. Dapper Linux simply offers a more robust and hardened experience compared to that of a standard Linux distribution. Features such as a Grsecurity hardened kernel, Oz sandboxing, application firewalls, hard disk encryption and dual web browsers will keep you safer and make it significantly more difficult for an attacker to breach your system, but they are not meant to act as a silver bullet.
                         </p>
@@ -175,6 +177,7 @@
                 <div class="row">
                     <div>
                         <h2>Making a Bootable USB Drive</h2>
+                        <br>
                         <h4>For Linux Users:</h4>
                         <h5>Gnome-disks Method</h5>
                         <div class="col-md-4">

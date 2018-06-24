@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-        <title>Announcing Dapper Linux 27</title>
+        <title>Update on Dapper Secure Kernel Patchset</title>
         <meta name="description" content="">
         <meta name="keywords" content="">
         <meta name="author" content="Dapper Linux Limited">
@@ -94,9 +94,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="block">
-                            <h2>Announcing Dapper Linux 27</h2>
+                            <h2>Update on Dapper Secure Kernel Patchset</h2>
                             <div class="portfolio-meta">
-                                <span>19 January 2018</span>|
+                                <span>18 June 2018</span>|
                                 <span> Category: Thoughts</span>|
                             </div>
                         </div>
@@ -109,33 +109,62 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="post-img">
-                                <img class="img-responsive" alt="" src="/blog/images/post-4.png">
+                                <img class="img-responsive" alt="" src="/blog/images/post-5.png">
                             </div>
                             <div class="post-content">
                                 <p>
-                                    It's time for another major announcement, and that is the release of Dapper Linux 27! Dapper Linux 27 is the next generation of flagship secure operating systems by Dapper Linux Limited. Dapper Linux is designed from the ground up to keep you safe and secure.
+                                    I think its important to give an update on Dapper Secure Kernel Patchset, the technology underpinning the majority of security foundations found within Dapper Linux.
+                                </p>
+                                <p>
+                                As we recall from the last <a href="/blog/announcing-dapper-secure-kernel-patchset.html">blog post</a>, Dapper Secure Kernel Patchset is a fork of the final grsecurity patchset from April 2017, which was version 4.9.24 at the time Open Source Security announced that public access to test patches will cease. I announced two forks, one, Dapper Secure Kernel Patchset, targets Linux 4.14 and is currently incomplete, and the other, Dapper Secure Kernel Patchset Stable, is now at 4.9.109 and is fully functional.
+                                </p>
+                                <p>
+                                Its quite an achievement on getting Dapper Secure Kernel Patchset Stable from 4.9.24 all the way to 4.9.109. Thats 75 whole releases, and a cause for celebration! Some of those releases were straightforward, some not so. Some were routine code maintenance, and some were some in depth changes. Let's have a look at some of those.
+                                </p>
+                                <p>
+                                Maintenance of Dapper Secure Kernel Patchset Stable was straightforward until 4.9.75. There were a few seperate forks around, mostly myself, Minipli and Alpine, who would fix merge conflicts and release a new patch once or twice a week. Then in January, everything changed with the announcement of Meltdown and Spectre, a class of vulnerabilities targeting hardware flaws in cpus which take advantage of speculation of branches of instructions. If you are here and reading this blog, you probably already know how they function.
+                                </p>
+                                <p>
+                                But when it came to the patchset, I first knew something was up when I saw a large amount of merge conflicts when I sat down to maintain the patchset. It was far more than normal, about 12. These all made large modifications to the core and required a lot of work to get settled. I eventually got everything merged, and quickly found after compiling that I was going to have a hard time getting it to boot. 
+                                </p>
+                                <p>
+                                It turns out, that KAISER, the PTI code which was pushed to the 4.9 branch by upstream, was incompatible with PaX, and will likely never be. The grsecurity twitter explained that upstream grsec patches will have PTI disabled, and functionality placed in UDEREF. Now, modifications to UDEREF to mitigate meltdown are a little out of my depth, even with the level of understanding of the patchset I hold. I waited, to see what Minipli would do in his fork, since discussion was ramping up on his github issue tracker.
+                                </p>
+                                <p>
+                                Problem is, Minipli never did make any more releases. Six months after the fact, his tree still shows his latest release to be 4.9.74, the version before Meltdown.
+                                </p>
+                                <p>
+                                Around mid May, I started to get a little worried about using a kernel missing 4 months of security patches, I decided to try and start performing maintenance again. I got the raw diffs from 4.9.74 -> 4.9.75 and went through each patch hunk, and pulled out everything not related to Meltdown or Spectre, and set up scripts to reverse those incompatible patches.
+                                </p>
+                                <p>
+                                In that first release, it turned out the only compatible patch hunk was the modification to the Makefile to denote the kernel was now at version 4.9.75. I kept on going, and started 4.9.76, which contained the groundwork for Retpoline.
+                                </p>
+                                <p>
+                                I started a new process of always getting patch hunks from one version to the next, like 4.9.75 -> 4.9.76, and made an "omitted-patches" folder in my source tree. This folder holds files of "omitted" patch hunks which are reversed, and "included" patch hunks which are allowed to remain in the tree.
+                                </p>
+                                <p>
+                                I always make sure that "omitted" + "included" = "raw diff". From here, I would push forward Kernel versions, and made my way to 4.9.80, shuffling patches between omitted and included as necessary. From there, I went and <a href="https://github.com/minipli/linux-unofficial_grsec/issues/25#issuecomment-390451583">commented</a> on one of Minipli's github issues, and started getting replies from interested users.
                                 </p>
                                 <blockquote>
-                                    Making Dapper Linux is my passion, and I am dedicated to building you a secure operating system that fits into your lifestyle and needs. - Matthew Ruffell, Founder.
+                                    Maintaining this patchset is starting to get tough, but I won't give up! Dapper Secure Kernel Patchset offers a level of security which is hard to find elsewhere, and I don't want the world to lose such incredible advancements. I will continue to do my best to offer this patchset for Linux 4.9.x - Matthew Ruffell, Founder.
                                 </blockquote>
                                 <p>
-                                    New in Dapper Linux 27:
+                                    From there, I spent two weekends straight forward porting Dapper Secure Kernel Patchset Stable from 4.9.80 all the way to 4.9.106, using the omit scripts to reverse any patches related to Meltdown or Spectre. Over the past few weeks, I am back to the normal routine of making releases in tune with upstream, and currently sit at 4.9.109.
                                 </p>
                                 <p>
-                                    Flatpak is the new preferred sandboxing framework and application distribution system for Dapper Linux 27. Oz has been removed, and is no longer supported, so if you use custom applications with Oz, you should start migrating to Flatpak. Flatpak brings many exciting new features and an expanded application base. If you are interested in how Flatpak works, check out their <a href="https://flatpak.org">website</a> and applications you can install from <a href="https://flathub.org">flathub.</a><br>
-                                    Flatpak uses bwrap as a sandboxing mechanism, and is setuid instead of enabling user namespaces in the kernel. User namespaces are far too much of a concern to enable since the threat surface is rapidly increased by any user being able to do traditionally privileged actions like creating network namespaces, so instead setuid bwrap is more secure in the eyes of Dapper Linux.
+                                Things left to do:
+                                </p>
+                                <ol>
+                                    <li>Complete GCC 8 port.</li>
+                                    <li>Slowly merge in base Retpoline support.</li>
+                                    <li>Complete Retpoline support.</li>
+                                    <li>Decide what to do with Meltdown.</li>
+                                </ol>
+                                <p>
+                                    For the future, I need to work on finishing GCC 8 support, something I have spent much time on recently, but am currently stuck on, and beginning to start merging Retpoline and enabling its functionality.
                                 </p>
                                 <p>
-                                Dapper Hardened Browser got an overhaul, and now supports Firefox Quantum, or version 57 features. Dapper Hardened Browser itself is now built as a developer edition to unlock the developer features, and more importantly has sane profile separation. Before Dapper Linux used in "interesting" way to ensure your browser started with different profiles, and this has been fully resolved. Note that some addons had to be dropped, such as Request Policy, NoScript and User Agent Switcher, and have been replaced with uMatrix.
-                                </p>
-                                <p>
-                                The kernel has been updated to 4.9.70+ and currently sits in 4.9.74 in the first build of 2018. It should be mentioned that the fix for meltdown and spectre has been pushed to Linux 4.9.75, and some complications have arisen forward porting Dapper Secure Kernel Patchset Stable to accommodate with the new patches. A separate blog post will follow with what is happening in that area.
-                                </p>
-                                <p>
-                                Stability has greatly improved in Dapper Linux 27. If you are a user, please do install Dapper Linux 27, as it fixes a large amount of problems with the introduction of Flatpak. Fedora 27 is the base, so upgraded Gnome 3.26 and other features are at their latest versions.
-                                </p>
-                                <p>
-                                So, if you like the sound of Dapper Linux, go ahead and <a href="/download.html">download</a> it, and don't forget to <a href="/contact.html">contact</a> us if you have any suggestions or improvements.
+                                Upstream support for Linux 4.9 will end in December. That is not very far away now, and I should be able to keep Dapper Secure Kernel Patchset Stable maintained until then. After that, I am not sure what will happen. It would probably be unwise to use 4.9 any longer than that, since it would be two years old, and likely Linux 5.0 would be out. The plan is to potentially start contributing to upstream, which will help we transition into a real kernel developer, instead of someone who maintains a fork.
                                 </p>
                             </div>
                         </div>

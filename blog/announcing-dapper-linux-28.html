@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-        <title>Announcing Dapper Linux 27</title>
+        <title>Announcing Dapper Linux 28</title>
         <meta name="description" content="">
         <meta name="keywords" content="">
         <meta name="author" content="Dapper Linux Limited">
@@ -94,9 +94,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="block">
-                            <h2>Announcing Dapper Linux 27</h2>
+                            <h2>Announcing Dapper Linux 28</h2>
                             <div class="portfolio-meta">
-                                <span>19 January 2018</span>|
+                                <span>24 June 2018</span>|
                                 <span> Category: Thoughts</span>|
                             </div>
                         </div>
@@ -109,33 +109,28 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="post-img">
-                                <img class="img-responsive" alt="" src="/blog/images/post-4.png">
+                                <img class="img-responsive" alt="" src="/blog/images/post-6.png">
                             </div>
                             <div class="post-content">
-                                <p>
-                                    It's time for another major announcement, and that is the release of Dapper Linux 27! Dapper Linux 27 is the next generation of flagship secure operating systems by Dapper Linux Limited. Dapper Linux is designed from the ground up to keep you safe and secure.
+                                <p>Dapper Linux Limited is pleased to announce the release of Dapper Linux 28! Dapper Linux 28 is the next major revision of the flagship secure operating system developed by Dapper Linux Limited.
                                 </p>
                                 <blockquote>
-                                    Making Dapper Linux is my passion, and I am dedicated to building you a secure operating system that fits into your lifestyle and needs. - Matthew Ruffell, Founder.
+                                    Making Dapper Linux is fun, educational and rewarding. I still enjoy tinkering with the internals and making things more secure, easier to use and better, release after release. - Matthew Ruffell, Founder.
                                 </blockquote>
                                 <p>
-                                    New in Dapper Linux 27:
+                                New in Dapper Linux 28:
                                 </p>
                                 <p>
-                                    Flatpak is the new preferred sandboxing framework and application distribution system for Dapper Linux 27. Oz has been removed, and is no longer supported, so if you use custom applications with Oz, you should start migrating to Flatpak. Flatpak brings many exciting new features and an expanded application base. If you are interested in how Flatpak works, check out their <a href="https://flatpak.org">website</a> and applications you can install from <a href="https://flathub.org">flathub.</a><br>
-                                    Flatpak uses bwrap as a sandboxing mechanism, and is setuid instead of enabling user namespaces in the kernel. User namespaces are far too much of a concern to enable since the threat surface is rapidly increased by any user being able to do traditionally privileged actions like creating network namespaces, so instead setuid bwrap is more secure in the eyes of Dapper Linux.
+                                    Dark theming has been fixed. There were some problems in Dapper Linux 27 with getting Flatpak to find the dapper-dark theme, even though the theme was packaged correctly and deployed properly. It turns out that Flatpak needs themes to be on GTK branch 3.22, regardless of what GTK version your app targets, and does not support master branch. Anyway, this has been fixed and Flatpak apps now work correctly.
                                 </p>
                                 <p>
-                                Dapper Hardened Browser got an overhaul, and now supports Firefox Quantum, or version 57 features. Dapper Hardened Browser itself is now built as a developer edition to unlock the developer features, and more importantly has sane profile separation. Before Dapper Linux used in "interesting" way to ensure your browser started with different profiles, and this has been fully resolved. Note that some addons had to be dropped, such as Request Policy, NoScript and User Agent Switcher, and have been replaced with uMatrix.
+                                Dapper Linux 28 now ships with Dapper Secure Kernel Stable 4.9.109+, since the barriers of getting past 4.9.74 have now been removed, and I am able to release Dapper Secure Kernel Patchset Stable again. One small problem is that Dapper Linux 28 ships the latest GCC 8, and Dapper Secure Kernel Patchset Stable is not quite compatible with GCC 8. The kernel package is still built on a Fedora 27 chroot with GCC 8. I will work at fixing this as soon as possible.
                                 </p>
                                 <p>
-                                The kernel has been updated to 4.9.70+ and currently sits in 4.9.74 in the first build of 2018. It should be mentioned that the fix for meltdown and spectre has been pushed to Linux 4.9.75, and some complications have arisen forward porting Dapper Secure Kernel Patchset Stable to accommodate with the new patches. A separate blog post will follow with what is happening in that area.
+                                Dapper Linux 28 is based on Fedora 28, and contains the majority of improvements found in Fedora 28, such as Gnome-Shell 3.28, GCC 8, and more. Flatpak is also getting more mature, and is turning into an excellent sandboxing framework. I am very happy with the decision to switch from Oz to Flatpak, starting with Dapper Linux 27. Of course, I wish the Subgraph crew all the best with Oz development, although it appears it is now unmaintained.
                                 </p>
                                 <p>
-                                Stability has greatly improved in Dapper Linux 27. If you are a user, please do install Dapper Linux 27, as it fixes a large amount of problems with the introduction of Flatpak. Fedora 27 is the base, so upgraded Gnome 3.26 and other features are at their latest versions.
-                                </p>
-                                <p>
-                                So, if you like the sound of Dapper Linux, go ahead and <a href="/download.html">download</a> it, and don't forget to <a href="/contact.html">contact</a> us if you have any suggestions or improvements.
+                                This probably deserves a blog article on its own, but more and more small projects are losing support and their primary developers are starting to either move on, or give up. It's sad to see, since operating small independent outfits gives you a freedom you can't really appreciate if you are a part of a larger company. CopperheadOS, Subgraph OS, Minipli's grsecunoff fork and Alpine's hardened kernel have either started winding down, or are starting to go unmaintained. I'll keep Dapper Linux going as long as I can, but I am aware that the security space is getting smaller, every day, and that someday it might happen to me, too.
                                 </p>
                             </div>
                         </div>
